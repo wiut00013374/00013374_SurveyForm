@@ -1,4 +1,6 @@
 using _00013374_SurveyForm.Server.Data;
+using _00013374_SurveyForm.Server.Repositories.Implementation;
+using _00013374_SurveyForm.Server.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 
 var app = builder.Build();
 
