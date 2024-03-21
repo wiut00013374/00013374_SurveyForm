@@ -1,0 +1,6 @@
+@_00013374_SurveyForm.Server_HostAddress = http://localhost:5030
+
+GET {{_00013374_SurveyForm.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
